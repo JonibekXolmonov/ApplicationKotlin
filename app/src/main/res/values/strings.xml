@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TwitterClone</string>
+    <string name="button_name1">PressMee1</string>
+    <string name="button_name2">PressMee2</string>
+    <string name="button_name3">PressMee3</string>
+    <string name="splash_view_message">Wait three second…</string>
+</resources>
