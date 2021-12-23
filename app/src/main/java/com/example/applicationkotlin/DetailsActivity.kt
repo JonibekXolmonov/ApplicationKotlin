@@ -1,27 +1,27 @@
 package com.example.applicationkotlin
 
-import android.content.Intent
+
 import android.os.Bundle
-import android.util.Log
+import android.webkit.WebView
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.details_activity)
+
         initView()
     }
 
     private fun initView() {
-        val button = findViewById<Button>(R.id.bv2_id)
-        button.setOnClickListener {
-            openLastPage()
-        }
-    }
+        val webView = findViewById<WebView>(R.id.vw_web_view)
+        val searchButton = findViewById<Button>(R.id.btn_search)
+        val inputEditText = findViewById<EditText>(R.id.edt_enter)
 
-    private fun openLastPage() {
-        val intent = Intent(this, MoreDetailsActivity::class.java)
-        startActivity(intent)
+        searchButton.setOnClickListener {
+            webView.loadUrl(inputEditText.text.toString())
+        }
     }
 }
